@@ -37,12 +37,3 @@ def root(lat: float, lng: float) -> Forcast:
     logger.info(f"response received")
     json: Forcast = resp.json()
     return json
-
-
-class HealthCheck(BaseModel):
-    status: str
-
-
-@app.get("/healthcheck")
-def healthcheck():
-    return {"status": "ok"}

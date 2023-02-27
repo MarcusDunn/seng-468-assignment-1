@@ -10,10 +10,8 @@ services:
   server:
     build:
       context: ./server
-    ports:
-      - "5000:5000"
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:5000/healthcheck" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:5000/openapi.json" ]
       interval: 2s
       start_period: 1s
       timeout: 1s
