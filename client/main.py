@@ -5,7 +5,7 @@ import requests
 
 logging.basicConfig(level=logging.INFO)
 
-logger = logging.getLogger("Client")
+logger = logging.getLogger()
 
 
 def main():
@@ -15,7 +15,6 @@ def main():
         server_url = "http://server:5000"
 
     logger.info(f"Server URL: {server_url}")
-
     logger.info("sending request to server")
 
     request = f"{server_url}/forcast/?lat=51.5074&lng=0.1278"
@@ -29,7 +28,6 @@ def main():
     json = response.json()
 
     logger.info(json)
-
     logger.info("exiting")
 
 

@@ -1,4 +1,4 @@
-FROM python:3.9-slim-bullseye
+FROM python:3.12.0a5-slim-bullseye
 
 # install curl for healthcheck
 RUN apt-get update && apt-get install -y curl
