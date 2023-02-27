@@ -1,0 +1,20 @@
+services:
+  client:
+    build:
+      context: ./client
+    depends_on:
+      server:
+        condition: service_healthy
+    environment:
+      SERVER_URL: http://server:5000
+  server:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:5000/healthcheck" ]
+      interval: 2s
+      start_period: 1s
+      timeout: 1s
+      retries: 3
