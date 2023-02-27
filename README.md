@@ -1,5 +1,5 @@
 1. What is Docker and how does it differ from a virtual machine? [1]
-   - It shares the OS with the host machine. 
+   - It shares the OS with the host machine. Virtual machines run their own OS.
 2. How does Docker ensure that containers are isolated from each other and the host
    system? [2]
     - It uses networks and namespaces to isolate the containers from each other and the host system.
