@@ -1,12 +1,5 @@
-FROM python:3.12.0a5-slim-bullseye
+FROM python:3.11
 
-COPY venv /opt
-
-ENV VIRTUAL_ENV=/opt/venv
-RUN python -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-# Install dependencies:
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
